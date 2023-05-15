@@ -8,7 +8,7 @@ export const myFunction = async () => {
   }
 
   try {
-    await writeFile("./logs/log.txt", "my new text");
+    await appendFile("./logs/log.txt", "my new text");
   } catch (error) {
     console.error(error);
   }
@@ -19,7 +19,6 @@ export const myFunction = async () => {
     console.error(error);
   }
 };
-myFunction();
 
 export const myErrorFunction = async (message) => {
   try {
@@ -38,9 +37,9 @@ export const myInfoFunction = async (message) => {
 };
 
 export const myWarnFunction = async (message) => {
-    try {
-      await appendFile("./logs/warn.js", message + "\n");
-    } catch (error) {
-      console.error(error);
-    }
-  };
+  try {
+    await appendFile("./logs/warn.js", message + "\n");
+  } catch (error) {
+    console.error(error);
+  }
+};
